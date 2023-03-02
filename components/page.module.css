@@ -1,0 +1,40 @@
+.pageWrapper {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    /* margin: 0 auto;
+    text-align: center; */
+    align-items: center;
+    justify-content: center;
+}
+
+.pageWrapper li {
+    border: 2px solid #5fae1a;
+    border-radius: 5px;
+    margin-right: 10px;
+    background: #ffffff;
+    display: block;
+    transition: all 0.2s;
+}
+
+.pageWrapper li a {
+    display: block;
+    width: 35px;
+    height: 35px;
+    line-height: 1.9;
+    text-align: center;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    color: #5fae1a;
+    transition: all 0.2s;
+}
+
+.pageWrapper li:hover {
+    background-color: #5fae1a;
+}
+
+.pageWrapper li a:hover {
+    color: #fff;
+    text-decoration: none;
+}

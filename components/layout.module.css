@@ -1,0 +1,302 @@
+.container {
+    /* max-width: 36rem; */
+    width: 1000px;
+    max-width: 1000px;
+    /* padding: 0 1rem; */
+    margin: 0 auto;
+    /* background: lightblue; */
+  }
+  
+  /* .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 15px -5px #777777;
+  } */
+
+  .headerContent {
+    width: 1000px;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .headerContent h1 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .menus {
+    display: flex;
+  }
+
+  .headerContent li {
+    list-style: none;
+    margin-right: 20px;
+  }
+
+  .headerContent li:last-of-type {
+    margin-right: 0;
+  }
+  
+  .backToHome {
+    margin: 3rem 0 0;
+  }
+
+  .container main {
+    margin-top: 47px;
+  }
+
+  /* ====== Menu Styling Start ====== */
+  .header {
+    padding: 0 40px;
+    z-index: 50;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px -5px #777777;
+  }
+
+  .headerWrapper {
+    width: 1024px;
+    /* background-color: lightcoral; */
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .logo a {
+    color: #333;
+  }
+
+  .logo a:hover {
+    text-decoration: none;
+  }
+
+  .header nav {
+    margin-left: auto;
+  }
+
+  .header li {
+    display: inline-block;
+    margin-left: 15px;
+  }
+
+  .header li a {
+    color: #333;
+  }
+
+  .header li a:hover {
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .header {
+      position: initial;
+    }
+
+    .header nav {
+      display: none;
+    }
+
+    .headerWrapper {
+      width: 100%;
+      /* background-color: lightcoral; */
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      padding: 3% 0;
+    }
+  }
+
+  .humburger {
+    background-color: rgb(34, 35, 36);
+    color: white;
+    padding: 10px 5px 0 5px;
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 40px;
+  }
+
+  .humburger span {
+    background-color: #fff;
+    width: 30px;
+    height: 1px;
+    display: block;
+    margin-bottom: 7px;
+  }
+
+  .humburger span:nth-child(1) {
+    width: 20px;
+    margin-left: 10px;
+  }
+
+  .humburger p {
+    font-size: 13px;
+    margin-top: -4px;
+    margin-bottom: 5px;
+  }
+
+  .drawerMenu {
+    width: 0;
+    color: white;
+    background-color: rgb(34, 35, 36);
+    transition: 0.5s;
+    height: 0;
+    opacity: 0;
+    z-index: -100;
+  }
+
+  .drawerMenu.open {
+    height: 100vh;
+    opacity: 1;
+    z-index: 100;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .header {
+      padding: 0 20px;
+    }
+
+    /* .logo {
+      margin-top: 25px;
+    }  */
+
+    .container {
+      margin: 0 0 0 auto;
+    }
+
+    .container .humburger {
+      display: block;
+    }
+
+    .humburger {
+      z-index: 100;
+    }
+
+    .drawerMenu {
+      width: 100%;
+      position: fixed;
+      top: 0;
+    }
+
+    .drawerMenu ul {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .drawerMenu ul li {
+      margin-bottom: 25px;
+      opacity: 0.8;
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 200;
+    }
+
+    .mobileLogo {
+      width: 250px;
+      height: 80px;
+      display: inline-block;
+      position: absolute;
+      top: 0px;
+    }
+    .mainTitle {
+      font-size: 28px;
+      margin-bottom: 5px;
+      letter-spacing: 2px;
+    }
+    .subTitle {
+      font-size: 15px;
+    }
+
+    .close {
+      cursor: pointer;
+      margin-top: 28px;
+      padding-right: 5px;
+    }
+
+    .close span {
+      background-color: white;
+      width: 30px;
+      height: 1px;
+      display: block;
+      margin-bottom: 10px;
+      margin: 0 0 10px auto;
+    }
+
+    .close span:first-child {
+      transform: translateY(6px) rotate(150deg);
+    }
+
+    .close span:nth-child(2) {
+      transform: translateY(-6px) rotate(-150deg);
+      margin-bottom: 0;
+    }
+
+    .close p {
+      text-align: right;
+      font-size: 11px;
+      padding-right: 1px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .header {
+      padding: 0 20px;
+    }
+    .humburger {
+      top: 1.5%;
+      right: 3%;
+      padding: 2% 1.5% 0 1.5%;
+    }
+    .mobileLogo {
+      width: 190px;
+      height: 60px;
+      top: 10px;
+    }
+  }
+
+  @media screen and (max-width: 340px) {
+    .header {
+      padding: 0 10px;
+    }
+
+    .header .logo {
+      width: 170px;
+      height: 60px;
+    }
+  }
+
+  /* ====== Menu Styling End ====== */
+
+  /* ========= Tablet Display Start ========= */
+  @media screen and (max-width: 1024px) {
+    .container {
+      width: 94%;
+      max-width: 94%;
+      margin: 0 auto;
+      /* background: lightblue; */
+    }
+
+    .container main {
+      margin-top: 0;
+    }
+
+    .headerContent {
+      width: 94%;
+      max-width: 94%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  /* ========= Tablet Display End ========= */
