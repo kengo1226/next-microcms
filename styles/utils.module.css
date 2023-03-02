@@ -113,3 +113,17 @@
     }
   }
   /* ========= Tablet Display End ========= */
+
+
+  /* ========= Smartphone Display Start ========= */
+  @media screen and (max-width: 499px) {
+    .listItem {
+      margin: 0 0 1.25rem;
+      width: 100%;
+    }
+
+    .listItem img {
+      height: 56vw;
+    }
+  }
+  /* ========= Smartphone Display End ========= */
