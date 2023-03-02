@@ -30,7 +30,7 @@ export default function Post({postData}) {
     return (
         <Layout>
         <Head>
-            <title>{postData.title}</title>
+            <title>{postData.title}｜Aozora BLOG</title>
         </Head>
         <SubHero />
             <h1 className={utilStyles.headingXl}>{postData.title}</h1>
