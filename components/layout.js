@@ -5,8 +5,8 @@ import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 import React, {useState} from "react";
 
-const name = 'Aozora BLOG1';
-export const siteTitle = 'AozoraBLOG';
+const name = 'Aozora BLOG';
+export const siteTitle = 'AozoraBLOG｜Blog for us';
 
 export default function Layout({ children, home }) {
 
@@ -74,22 +74,12 @@ export default function Layout({ children, home }) {
           <ul>
             <li>
               <Link href="/">
-              メニュー
+              Farm
               </Link>
             </li>
             <li>
               <Link href="/">
-              メニュー
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-             メニュー
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-              メニュー
+              Products
               </Link>
             </li>
           </ul>
@@ -112,23 +102,13 @@ export default function Layout({ children, home }) {
           </div>
           <li>
             <Link href="/">
-                <p className={styles.mainTitle}>メニュー</p>
+                <p className={styles.mainTitle}>Farm</p>
 
             </Link>
           </li>
           <li>
             <Link href="/">
-              <p className={styles.mainTitle}>メニュー</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <p className={styles.mainTitle}>menu</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <p className={styles.mainTitle}>menu</p>
+              <p className={styles.mainTitle}>Products</p>
             </Link>
           </li>
         </ul>
