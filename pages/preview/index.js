@@ -13,15 +13,29 @@ export default function NewsPage() {
                 contentId: router.query.slug,
                 queries: { draftKey: router.query.draftKey },
             });
+            return {
+                props: {
+                    blog: data.contents,
+                    totalCount: data.totalCount,
+                },
+            };
             setData(res);
         };
         getBlogsData();
     }, [router]);
 
+    // return (
+    //     <div>
+    //         <h1>{data.title}</h1>
+    //         <p>{data.publishedAt}</p>
+    //     </div>
+    // );
+}
+
+export default function previewHome({blog}) {
     return (
         <div>
-            <h1>{data.title}</h1>
-            <p>{data.publishedAt}</p>
+            <h2>{blog.title}</h2>
         </div>
     );
 }
