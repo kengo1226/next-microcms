@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useRouter} from "next/router";
 import { client } from "../../lib/Clients";
 
-export default function NewsPage() {
+export function NewsPage() {
     const [data, setData] = useState();
     const router = useRouter();
     useEffect(() => {
@@ -32,10 +32,10 @@ export default function NewsPage() {
     // );
 }
 
-export default function previewHome({blog}) {
+export default function previewHome({title}) {
     return (
         <div>
-            <h2>{blog.title}</h2>
+            <h2>{title}</h2>
         </div>
     );
 }
