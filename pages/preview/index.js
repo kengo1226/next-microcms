@@ -3,7 +3,7 @@ import {useRouter} from "next/router";
 import { client } from "../../lib/Clients";
 
 export default function NewsPage() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState();
     const router = useRouter();
     useEffect(() => {
         const getBlogsData = async () => {
@@ -20,8 +20,8 @@ export default function NewsPage() {
 
     return (
         <div>
-            <h1>data.title</h1>
-            <p>data.publishedAt</p>
+            <h1>{data.title}</h1>
+            <p>{data.publishedAt}</p>
         </div>
     );
 }
