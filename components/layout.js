@@ -121,6 +121,9 @@ export default function Layout({ children, home }) {
         </div>
       )}
       </div>
+      <footer className={styles.footer}>
+        <p className={styles.footerText}>© Aozoara BLOG. 2023</p>
+      </footer>
       </>
   );
 }
