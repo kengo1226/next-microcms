@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useRouter} from "next/router";
 import { client } from "../../lib/Clients";
 
-export default function NewsPage() {
+const NewsPage = () => {
     const [data, setData] = useState();
     const router = useRouter();
     useEffect(() => {
@@ -22,10 +22,12 @@ export default function NewsPage() {
     return (
         <div>
             <h1>{data.title}</h1>
-            <p>{data.publishedAt}</p>
+            <p>{data.createdAt}</p>
         </div>
     );
 }
+
+export default NewsPage
 
 // export default function previewHome() {
 //     console.log(data);
