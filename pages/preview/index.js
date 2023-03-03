@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useRouter} from "next/router";
 import { client } from "../../lib/Clients";
 
-export function NewsPage() {
+export default function NewsPage() {
     const [data, setData] = useState();
     const router = useRouter();
     useEffect(() => {
@@ -13,29 +13,25 @@ export function NewsPage() {
                 contentId: router.query.slug,
                 queries: { draftKey: router.query.draftKey },
             });
-            return {
-                props: {
-                    blog: data.contents,
-                    totalCount: data.totalCount,
-                },
-            };
             setData(res);
         };
         getBlogsData();
     }, [router]);
 
-    // return (
-    //     <div>
-    //         <h1>{data.title}</h1>
-    //         <p>{data.publishedAt}</p>
-    //     </div>
-    // );
-}
-
-export default function previewHome({title}) {
+    console.log(data);
     return (
         <div>
-            <h2>{title}</h2>
+            <h1>{data.title}</h1>
+            <p>{data.publishedAt}</p>
         </div>
     );
 }
+
+// export default function previewHome() {
+//     console.log(data);
+//     return (
+//         <div>
+//             <h2>{title}</h2>
+//         </div>
+//     );
+// }
