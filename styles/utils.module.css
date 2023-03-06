@@ -101,6 +101,33 @@
     transform: scale(1.07);
   }
 
+  /* category style */
+  .categoryContainer ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .categoryContainer li {
+    list-style: none;
+    margin-right: 12px;
+  } 
+
+  .categoryContainer a {
+    color: #333;
+    border: 1px solid #333;
+    padding: 3px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .categoryContainer a:hover {
+    color: #fff;
+    background: #333;
+    text-decoration: none;
+  }
+  /* category style */
+
   /* ========= Tablet Display Start ========= */
   @media screen and (max-width: 768px) {
     .listItem {

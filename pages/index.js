@@ -60,7 +60,8 @@ export default function Home({blog, totalCount, category}) {
       </section>
       <Pagination totalCount={totalCount}></Pagination>
 
-      <div>
+      <div className={utilStyles.categoryContainer}>
+      <h3>Category</h3>
         <ul>
           {category.map((category) => (
             <li key={category.id}>

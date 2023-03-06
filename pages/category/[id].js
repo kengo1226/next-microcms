@@ -37,7 +37,8 @@ export default function CategoryId({blog, category}) {
             ))}
             </ul>
         </section>
-        <div>
+        <div className={utilStyles.categoryContainer}>
+        <h3>Category</h3>
         <ul>
           {category.map((category) => (
             <li key={category.id}>
