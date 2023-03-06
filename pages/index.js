@@ -12,10 +12,13 @@ import React, {useState} from "react";
 export async function getStaticProps() {
   const allPostsData = await getSortedPostsData();
   const data = await client.get({ endpoint: 'blogs', queries: {offset: 0, limit: 9}});
+  // カテゴリーの取得
+  const categoryData = await client.get({endpoint: 'categories'})
   return {
     props: {
       blog: data.contents,
       totalCount: data.totalCount,
+      category: categoryData.contents,
     },
   };
   // return {
@@ -25,9 +28,8 @@ export async function getStaticProps() {
   // };
 }
 
-export default function Home({blog, totalCount}) {
+export default function Home({blog, totalCount, category}) {
   // console.log(allPostsData);
-  // console.log(blog);
   return (
     <Layout home>
       <Head>
@@ -57,6 +59,16 @@ export default function Home({blog, totalCount}) {
         </ul>
       </section>
       <Pagination totalCount={totalCount}></Pagination>
+
+      <div>
+        <ul>
+          {category.map((category) => (
+            <li key={category.id}>
+              <Link href={`/category/${category.id}`}>{category.name}</Link>
+            </li>
+            ))}
+        </ul>
+      </div>
     </Layout>
   );
 }
