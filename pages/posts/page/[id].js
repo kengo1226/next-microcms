@@ -10,7 +10,7 @@ import Hero from "../../../components/Hero";
 
 const PER_PAGE = 9;
 
-export default function BlogPageId({blog, totalCount}) {
+export default function BlogPageId({blog, totalCount, category}) {
     console.log(blog);
     // console.log(totalCount);
     return(
@@ -42,6 +42,18 @@ export default function BlogPageId({blog, totalCount}) {
             </ul>
         </section>
         <Pagination totalCount={totalCount}></Pagination>
+
+        <div className={utilStyles.categoryContainer}>
+        <h3>Category</h3>
+        <ul>
+        {category.map((category) => (
+            <li key={category.id}>
+            <Link href={`/category/${category.id}`}>{category.name}</Link>
+            </li>
+            ))}
+        </ul>
+        </div>
+
         </Layout>
     )
 }
@@ -58,11 +70,14 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
     const id = context.params.id;
   
-    const data = await client.get({ endpoint: "blogs", queries: { offset: (id - 1) * 9, limit: 999 } });
+    const data = await client.get({ endpoint: "blogs", queries: { offset: (id - 1) * 9, limit: 9 } });
+    // カテゴリーの取得
+    const categoryData = await client.get({endpoint: 'categories'})
     return {
       props: {
         blog: data.contents,
         totalCount: data.totalCount,
+        category: categoryData.contents,
       },
     };
   };

@@ -21,15 +21,10 @@ export async function getStaticProps() {
       category: categoryData.contents,
     },
   };
-  // return {
-  //   props: {
-  //     allPostsData
-  //   },
-  // };
 }
 
 export default function Home({blog, totalCount, category}) {
-  // console.log(allPostsData);
+// console.log(allPostsData);
   return (
     <Layout home>
       <Head>
