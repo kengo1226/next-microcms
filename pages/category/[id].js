@@ -3,6 +3,7 @@ import { client } from "../../lib/Clients";
 import Layout, {siteTitle} from "../../components/layout";
 import Head from 'next/head';
 import Hero from "../../components/Hero";
+import Date from "../../components/Date";
 import utilStyles from "../../styles/utils.module.css";
 
 export default function CategoryId({blog, category}) {
