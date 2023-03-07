@@ -41,7 +41,25 @@
   }
   
   .backToHome {
-    margin: 3rem 0 0;
+    margin: 3rem auto 0;
+  }
+
+  .backToHome a {
+    text-decoration: none;
+    background-color: #5fae1a;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s;
+  }
+
+  .backToHome a:hover {
+    background-color: #478113;
   }
 
   .container main {

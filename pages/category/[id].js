@@ -10,7 +10,7 @@ export default function CategoryId({blog, category}) {
         return <div>ブログコンテンツがありません</div>
     } 
     return (
-        <Layout home>
+        <Layout>
         <Head>
             <title>{siteTitle}</title>
         </Head>
