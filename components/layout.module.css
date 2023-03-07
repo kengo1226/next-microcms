@@ -141,7 +141,6 @@
 
     .headerWrapper {
       width: 100%;
-      /* background-color: lightcoral; */
       display: flex;
       align-items: center;
       margin: 0 auto;
@@ -183,7 +182,7 @@
     width: 0;
     color: white;
     background-color: rgb(34, 35, 36);
-    transition: 0.5s;
+    transition: 0.3s;
     height: 0;
     opacity: 0;
     z-index: -100;
@@ -193,6 +192,19 @@
     height: 100vh;
     opacity: 1;
     z-index: 100;
+  }
+
+  .drawerMenu li {
+    list-style: none;
+  }
+
+  .drawerMenu li a {
+    color: #fff;
+    text-decoration: none;
+  } 
+
+  .drawerMenu li a:hover {
+    text-decoration: none;
   }
 
   @media screen and (max-width: 1024px) {
@@ -225,6 +237,7 @@
     .drawerMenu ul {
       width: 90%;
       margin: 0 auto;
+      padding: 0;
     }
 
     .drawerMenu ul li {
@@ -245,6 +258,7 @@
       font-size: 28px;
       margin-bottom: 5px;
       letter-spacing: 2px;
+      border-bottom: 1px solid #fff;
     }
     .subTitle {
       font-size: 15px;
@@ -254,23 +268,24 @@
       cursor: pointer;
       margin-top: 28px;
       padding-right: 5px;
+      z-index: 1000;
     }
 
     .close span {
       background-color: white;
       width: 30px;
-      height: 1px;
+      height: 2px;
       display: block;
       margin-bottom: 10px;
       margin: 0 0 10px auto;
     }
 
     .close span:first-child {
-      transform: translateY(6px) rotate(150deg);
+      transform: translateY(6px) rotate(140deg);
     }
 
     .close span:nth-child(2) {
-      transform: translateY(-6px) rotate(-150deg);
+      transform: translateY(-6px) rotate(-140deg);
       margin-bottom: 0;
     }
 
@@ -278,6 +293,7 @@
       text-align: right;
       font-size: 11px;
       padding-right: 1px;
+      font-weight:normal;
     }
   }
 
