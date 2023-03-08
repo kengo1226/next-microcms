@@ -64,6 +64,7 @@
 
   .container main {
     margin-top: 47px;
+    min-height: 100vh;
   }
 
   /* ====== Menu Styling Start ====== */

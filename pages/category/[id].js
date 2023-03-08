@@ -10,6 +10,7 @@ export default function CategoryId({blog, category}) {
     if(blog.length === 0) {
         return <div>ブログコンテンツがありません</div>
     } 
+    console.log(category);
     return (
         <Layout>
         <Head>
@@ -17,7 +18,7 @@ export default function CategoryId({blog, category}) {
         </Head>
         <Hero />
         <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-            <h2 className={utilStyles.headingLg}>All Posts</h2>
+            <h2 className={utilStyles.headingLg}>Posts</h2>
             <ul className={utilStyles.list}>
             {blog.map(({id, createdAt, title, category, eyecatch}) => (
                 <li className={utilStyles.listItem} key={id}>
