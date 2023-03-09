@@ -28,12 +28,12 @@ export async function getStaticProps({ params }) {
 
 export default function Post({postData}) {
     console.log(postData);
-    console.log(postData.meta.dscription);
+    console.log(postData.meta.description);
     return (
         <Layout>
         <Head>
             <title>{postData.title}｜Aozora BLOG</title>
-            <meta name="description" content={postData.meta.dscription} />
+            <meta name="description" content={postData.meta.description} />
         </Head>
         <SubHero />
             <h1 className={utilStyles.headingXl}>{postData.title}</h1>
