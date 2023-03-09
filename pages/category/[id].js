@@ -29,6 +29,7 @@ export default function CategoryId({blog, category}) {
                 </picture>
                 </div>
                 <div className={utilStyles.cardContent}>
+                <p>{category.name}</p>
                 <h2>{title}</h2>
                 <small className={utilStyles.lightText}>
                     <Date dateString={createdAt} />

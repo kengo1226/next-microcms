@@ -43,7 +43,6 @@ export default function Post({postData}) {
         </Head>
         <SubHero />
             <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-            <br />
             <div className={utilStyles.lightText}>
                 <Date dateString={postData.createdAt} />
             </div>
