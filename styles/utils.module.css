@@ -161,10 +161,6 @@
     transition: all .3s;
   }
 
-  .returnTopButton img:hover {
-    opacity: 0.8!important;
-  }
-
   /* ========= Tablet Display Start ========= */
   @media screen and (max-width: 768px) {
     .listItem {
