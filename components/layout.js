@@ -6,7 +6,7 @@ import Link from 'next/link';
 import React, {useState} from "react";
 
 const name = 'Aozora BLOG';
-export const siteTitle = 'AozoraBLOG｜Blog for us';
+export const siteTitle = "AozoraBLOG｜What's new in Aozora";
 
 export default function Layout({ children, home }) {
 
