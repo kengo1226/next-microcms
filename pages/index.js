@@ -24,7 +24,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({blog, totalCount, category}) {
-// console.log(allPostsData);
+console.log(blog);
   return (
     <Layout home>
       <Head>
