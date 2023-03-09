@@ -77,7 +77,7 @@
   }
 
   .cardContent {
-    padding: 10px;
+    padding: 5px 10px 10px 10px;
   }
 
   .pictureBox {
@@ -129,6 +129,17 @@
     text-decoration: none;
   }
   /* category style */
+
+  .cardContent p {
+    padding: 0;
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #fff;
+    background-color: #5fae1a;
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 3px;
+  }
 
   /* ========= Tablet Display Start ========= */
   @media screen and (max-width: 768px) {
