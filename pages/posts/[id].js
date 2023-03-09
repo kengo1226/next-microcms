@@ -28,6 +28,7 @@ export async function getStaticProps({ params }) {
 
 export default function Post({postData}) {
     console.log(postData);
+    console.log(postData.meta.dscription);
     return (
         <Layout>
         <Head>
