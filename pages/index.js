@@ -7,7 +7,8 @@ import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/Posts';
 import {Pagination} from "../components/Pagination";
 import {client} from "../lib/Clients";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import Image from "next/image"
 
 export async function getStaticProps() {
   const allPostsData = await getSortedPostsData();
@@ -25,6 +26,48 @@ export async function getStaticProps() {
 
 export default function Home({blog, totalCount, category}) {
 console.log(blog);
+
+  const [isButtonActive, setIsButtonActive] = useState(false);
+
+  const returnTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollWindow)
+    return () => {
+      window.addEventListener('scroll', scrollWindow)
+    }
+  }, [])
+
+  const scrollWindow = () => {
+    const top = 150;
+    let scroll = 0;
+    scroll = window.scrollY
+    if(top <= scroll ) {
+      setIsButtonActive(true)
+    } else {
+      setIsButtonActive(false)
+    }
+  }
+
+  const normalStyle = {
+    opacity: 0,
+    transition: '0.3s',
+    PointerEvent: 'none',
+  }
+
+  const activeStyle = {
+    opacity: 1,
+    transition: '0.3s',
+  }
+
+  const style = isButtonActive ? activeStyle : normalStyle;
+
+
   return (
     <Layout home>
       <Head>
@@ -65,6 +108,11 @@ console.log(blog);
             </li>
             ))}
         </ul>
+      </div>
+
+      <div className={utilStyles.returnTopButton}>
+        {/* <button style={style} onClick={returnTop}>GoTOP</button> */}
+        <Image src="/images/returnTopButton.svg" style={style} onClick={returnTop} width={60} height={60} objectFit="cover" />
       </div>
     </Layout>
   );
