@@ -75,6 +75,12 @@ console.log(blog);
     // setOffset(data.selected * perPage);
     let page_number = blog['selected'];
     setOffset(page_number * perPage);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+
   }
 
 
