@@ -5,14 +5,15 @@ import Layout, { siteTitle } from '../components/layout';
 import Hero from '../components/Hero';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/Posts';
-import {Pagination} from "../components/Pagination";
+// import {Pagination} from "../components/Pagination";
 import {client} from "../lib/Clients";
 import React, {useState, useEffect} from "react";
-import Image from "next/image"
+import Image from "next/image";
+import ReactPaginate from "react-paginate";
 
 export async function getStaticProps() {
   const allPostsData = await getSortedPostsData();
-  const data = await client.get({ endpoint: 'blogs', queries: {offset: 0, limit: 9}});
+  const data = await client.get({ endpoint: 'blogs', queries: {offset: 0, limit: 9999}});
   // カテゴリーの取得
   const categoryData = await client.get({endpoint: 'categories'})
   return {
@@ -67,6 +68,15 @@ console.log(blog);
 
   const style = isButtonActive ? activeStyle : normalStyle;
 
+  const [offset, setOffset] = useState(0);
+  const perPage = 9;
+
+  const handlePageChange = (blog) => {
+    // setOffset(data.selected * perPage);
+    let page_number = blog['selected'];
+    setOffset(page_number * perPage);
+  }
+
 
   return (
     <Layout home>
@@ -77,7 +87,7 @@ console.log(blog);
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>All Posts</h2>
         <ul className={utilStyles.list}>
-          {blog.map(({id, createdAt, title, category, eyecatch}) => (
+          {blog.slice(offset, offset + perPage).map(({id, createdAt, title, category, eyecatch}) => (
             <li className={utilStyles.listItem} key={id}>
             <Link href={`/posts/${id}`}>
             <div className={utilStyles.pictureBox}>
@@ -97,7 +107,15 @@ console.log(blog);
           ))}
         </ul>
       </section>
-      <Pagination totalCount={totalCount}></Pagination>
+      {/* <Pagination totalCount={totalCount}></Pagination> */}
+      <ReactPaginate
+        previousLabel={"<"}
+        nextLabel={">"}
+        pageCount={Math.ceil(blog.length / perPage)}
+        onPageChange={handlePageChange}
+        containerClassName={utilStyles.pagination}
+        activeClassName={utilStyles.active}
+      />
 
       <div className={utilStyles.categoryContainer}>
       <h3>Category</h3>
