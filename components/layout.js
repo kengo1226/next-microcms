@@ -122,7 +122,7 @@ export default function Layout({ children, home }) {
       )}
       </div>
       <footer className={styles.footer}>
-        <p className={styles.footerText}>© Aozoara BLOG. 2023</p>
+        <p className={styles.footerText}>© Aozora BLOG. 2023</p>
       </footer>
       </>
   );

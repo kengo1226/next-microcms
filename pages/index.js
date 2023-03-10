@@ -26,7 +26,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({blog, totalCount, category}) {
-console.log(blog);
+// console.log(blog);
 
   const [isButtonActive, setIsButtonActive] = useState(false);
 
@@ -68,6 +68,7 @@ console.log(blog);
 
   const style = isButtonActive ? activeStyle : normalStyle;
 
+  // create pagination
   const [offset, setOffset] = useState(0);
   const perPage = 9;
 
@@ -136,7 +137,7 @@ console.log(blog);
 
       <div className={utilStyles.returnTopButton}>
         {/* <button style={style} onClick={returnTop}>GoTOP</button> */}
-        <Image src="/images/returnTopButton.svg" style={style} onClick={returnTop} width={60} height={60} objectFit="cover" />
+        <Image src="/images/returnTopButton.svg" style={style} onClick={returnTop} width={60} height={60} objectFit="cover" alt="retunrtopbutton" />
       </div>
     </Layout>
   );
