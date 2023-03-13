@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
+import gallery from "../pages/gallery";
 import Link from 'next/link';
 import React, {useState} from "react";
 
@@ -82,6 +83,11 @@ export default function Layout({ children, home }) {
               Products
               </Link>
             </li>
+            <li>
+              <Link href="/gallery">
+              Gallery
+              </Link>
+            </li>
           </ul>
         </nav>
         </div>
@@ -109,6 +115,11 @@ export default function Layout({ children, home }) {
           <li>
             <Link href="/">
               <p className={styles.mainTitle}>Products</p>
+            </Link>
+          </li>
+          <li>
+            <Link href="/gallery">
+              <p className={styles.mainTitle}>Gallery</p>
             </Link>
           </li>
         </ul>
