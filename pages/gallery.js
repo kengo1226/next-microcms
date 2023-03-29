@@ -30,7 +30,7 @@ function gallery() {
         <div>
             <h2>Our Farm</h2>
             <Swiper
-                sliderPerView={2}
+                sliderPerView={1}
                 pagination={{
                     clickable: true,
                 }}

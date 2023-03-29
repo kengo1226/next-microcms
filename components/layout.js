@@ -88,6 +88,11 @@ export default function Layout({ children, home }) {
               Gallery
               </Link>
             </li>
+            <li>
+              <Link href="/news">
+              News
+              </Link>
+            </li>
           </ul>
         </nav>
         </div>
